@@ -1,6 +1,5 @@
 import 'package:chinaapp/Screens/home_screen.dart';
 import 'package:chinaapp/constant.dart';
-import 'package:chinaapp/global_file/common_widgets/offline_widgets/offline_widget.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -22,19 +21,14 @@ class F_OnboardingScreen extends StatefulWidget {
 class _F_OnboardingScreen extends State<F_OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
-    return offlineWidget( context );
-  }
-
-  Widget offlineWidget(BuildContext context) {
-    return CustomOfflineWidget(
-      onlineChild: Padding(
-        padding: const EdgeInsets.fromLTRB( 0, 0, 0, 0 ),
-        child: Scaffold(
-          body: _buildContent( context ),
-        ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Scaffold(
+        body: _buildContent(context),
       ),
     );
   }
+
 
   Widget _buildContent(BuildContext context) {
     return Scaffold(

@@ -1,8 +1,5 @@
-import 'package:chinaapp/Screens/SuccessScreen.dart';
 import 'package:chinaapp/constant.dart';
-import 'package:chinaapp/global_file/common_variables/app_functions.dart';
 import 'package:chinaapp/global_file/common_widgets/app_card.dart';
-import 'package:chinaapp/global_file/common_widgets/offline_widgets/offline_widget.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:device_apps/device_apps.dart';
 import 'package:flutter/material.dart';
@@ -24,32 +21,32 @@ class F_HomeScreen extends StatefulWidget {
 }
 
 class _F_HomeScreen extends State<F_HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return offlineWidget(context);
-  }
 
   Future<void> initPlatformState(String appID) async {
     await UninstallApps.uninstall(appID);
   }
 
-  Future<dynamic> dataa() {
+  Future<dynamic> deviceApps() {
     return DeviceApps.getInstalledApplications(
         includeAppIcons: true,
         includeSystemApps: false,
         onlyAppsWithLaunchIntent: false);
   }
 
-  Widget offlineWidget(BuildContext context) {
-    return CustomOfflineWidget(
-      onlineChild: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-        child: Scaffold(
-          body: _buildContent(context),
-        ),
+  final chineseApps = ['com.skype.raider', 'com.kondasri.tellthetruth', 'com.linecorp.b612.android'];
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Scaffold(
+        body: _buildContent(context),
       ),
     );
   }
+
+
+
 
   Widget _buildContent(BuildContext context) {
     return Scaffold(
@@ -178,7 +175,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
           horizontal: 30,
         ),
         child: FutureBuilder(
-            future: dataa(),
+            future: deviceApps(),
             builder: (context, data) {
               if (data.data == null) {
                 return Center(child: CircularProgressIndicator());
@@ -186,28 +183,30 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 List<Application> apps = data.data;
                 print(apps);
                 return ListView.builder(
+                    shrinkWrap: true,
                     itemBuilder: (context, position) {
                       Application app = apps[position];
                       return Column(
                         children: <Widget>[
+
+//                          chineseApps.contains(app.packageName) ?
                           AppCard(
                             app.appName,
-                            app.packageName,
-//                            app is ApplicationWithIcon
-//                                ? CircleAvatar(
-//                              backgroundImage: MemoryImage(app.icon),
-//                              backgroundColor: Colors.white,
-//                            ) : null,
-                            kBlueColor,
+                            app is ApplicationWithIcon
+                                ? CircleAvatar(
+                              backgroundImage: MemoryImage(app.icon),
+                              backgroundColor: Colors.transparent,
+                            ) : null,
+                                  (){
+                                    initPlatformState(app.packageName);
+                                    setState(() {
+                                      deviceApps();
+                                    });
+                            }
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-
-//                      ['com.skype.raider', 'com.kondasri.tellthetruth', 'com.linecorp.b612.android'].contains(app.packageName) ?
-//                          : Container(height: 0, width: 0,),
+//                              : Container(child: Text("You don't have any chinese apps in your mobile."),),
                           Divider(
-                            height: 1.0,
+                            height: 20.0,
                           )
                         ],
                       );
@@ -216,82 +215,6 @@ class _F_HomeScreen extends State<F_HomeScreen> {
               }
             })
 
-//      Column(
-//        children: <Widget>[
-//          AppCard(
-//            'Facebook',
-//            'FaceBook.inc - Social',
-//            'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png',
-//            kBlueColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'Instagram',
-//            'FaceBook.inc - Social',
-//            'https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png',
-//            kYellowColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'TickTock',
-//            'TikTok.inc - Social',
-//            'https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png',
-//            kOrangeColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'WhatsApp',
-//            'Whatsapp.inc - Social',
-//            'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/WhatsApp-512.png',
-//            kGreenColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'Facebook',
-//            'FaceBook.inc - Social',
-//            'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png',
-//            kBlueColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'Instagram',
-//            'FaceBook.inc - Social',
-//            'https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png',
-//            kYellowColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'TickTock',
-//            'TikTok.inc - Social',
-//            'https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png',
-//            kOrangeColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          AppCard(
-//            'WhatsApp',
-//            'Whatsapp.inc - Social',
-//            'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/WhatsApp-512.png',
-//            kGreenColor,
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//        ],
-//      ),
         );
   }
 }
