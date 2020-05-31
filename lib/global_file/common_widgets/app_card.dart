@@ -1,3 +1,4 @@
+import 'package:chinaapp/Screens/SuccessScreen.dart';
 import 'package:chinaapp/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,17 @@ class AppCard extends StatelessWidget {
               style: TextStyle(
                 color: kTitleTextColor.withOpacity(0.7),
               ),
+            ),
+            trailing: IconButton(
+              icon: Icon(Icons.delete,size: 30,color: kTitleTextColor.withOpacity(0.9),),
+              onPressed: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SuccessScreen(),
+          ),
+        );
+              },
             ),
           ),
         ),

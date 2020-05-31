@@ -38,6 +38,19 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
   Widget _buildContent(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
+      appBar: AppBar(
+        brightness: Brightness.light,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.more_vert,size: 30,color: kTitleTextColor,),
+            onPressed: (){
+
+            },
+          ),
+        ],
+      ),
       body: SafeArea(
         bottom: false,
         child: Stack(
@@ -51,7 +64,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height / 6,
+              top: MediaQuery.of(context).size.height / 10,
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width / 15,

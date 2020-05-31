@@ -43,6 +43,12 @@ class _F_SuccessScreen extends State<F_SuccessScreen> {
           brightness: Brightness.light,
           backgroundColor: Colors.transparent,
           elevation: 0,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios,size: 30,color: kTitleTextColor,),
+            onPressed: (){
+              Navigator.pop(context, true);
+            },
+          ),
         ),
         body: SafeArea(
           bottom: false,
@@ -66,8 +72,8 @@ class _F_SuccessScreen extends State<F_SuccessScreen> {
                   height: 10,
                 ),
                 DelayedDisplay(
-                  delay: Duration(seconds: 2),
-                  fadingDuration: Duration(seconds: 2),
+                  delay: Duration(seconds: 1),
+                  fadingDuration: Duration(seconds: 1),
                   slidingCurve: Curves.easeInCirc,
                   child:   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30),
@@ -85,8 +91,8 @@ class _F_SuccessScreen extends State<F_SuccessScreen> {
                   height: 10,
                 ),
                 DelayedDisplay(
-                  delay: Duration(seconds: 3),
-                  fadingDuration: Duration(seconds: 3),
+                  delay: Duration(seconds: 1),
+                  fadingDuration: Duration(seconds: 1),
                   slidingCurve: Curves.easeInCirc,
                   child:  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30),

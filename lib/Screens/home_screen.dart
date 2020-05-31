@@ -40,18 +40,31 @@ class _F_HomeScreen extends State<F_HomeScreen> {
   Widget _buildContent(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
+        appBar: AppBar(
+          brightness: Brightness.light,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios,size: 30,color: kTitleTextColor,),
+            onPressed: (){
+              Navigator.pop(context, true);
+            },
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.more_vert,size: 30,color: kTitleTextColor,),
+              onPressed: (){
+
+              },
+            ),
+          ],
+        ),
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.arrow_back_ios,size: 30,color: kTitleTextColor,),
-                onPressed: (){
-                  Navigator.pop(context, true);
-                },
-              ),
               DelayedDisplay(
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
@@ -133,50 +146,6 @@ class _F_HomeScreen extends State<F_HomeScreen> {
           ),
         ),
       ),
-        floatingActionButtonLocation:
-        FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child:   GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SuccessScreen(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: kTitleTextColor,
-                    ),
-                    height: 40,
-                    width: 200,
-
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Remove",style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: kWhiteColor,
-                          fontSize: 18,
-                        ),),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
     );
   }
 }
