@@ -76,8 +76,8 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       height: 20,
                     ),
                     DelayedDisplay(
-                      delay: Duration(seconds: 2),
-                      fadingDuration: Duration(seconds: 2),
+                      delay: Duration(seconds: 1),
+                      fadingDuration: Duration(seconds: 1),
                       slidingCurve: Curves.easeInCirc,
                       child: Text(
                         'Click on the "Scan Now" to find installed\nChina Apps in your system.',
@@ -91,8 +91,8 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       height: 20,
                     ),
                     DelayedDisplay(
-                      delay: Duration(seconds: 3),
-                      fadingDuration: Duration(seconds: 3),
+                      delay: Duration(seconds: 1),
+                      fadingDuration: Duration(seconds: 1),
                       slidingCurve: Curves.easeInCirc,
                       child:  MaterialButton(
                         onPressed: () {
@@ -122,8 +122,8 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       ),
                     ),
                     DelayedDisplay(
-                      delay: Duration(seconds: 4),
-                      fadingDuration: Duration(seconds: 4),
+                      delay: Duration(seconds: 1),
+                      fadingDuration: Duration(seconds: 1),
                       slidingCurve: Curves.easeInCirc,
                       child:   Row(
                         mainAxisAlignment: MainAxisAlignment.start,

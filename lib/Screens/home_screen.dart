@@ -67,8 +67,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 height: 10,
               ),
               DelayedDisplay(
-                delay: Duration(seconds: 2),
-                fadingDuration: Duration(seconds: 2),
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
                 child:    Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
@@ -86,8 +86,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 height: 10,
               ),
               DelayedDisplay(
-                delay: Duration(seconds: 3),
-                fadingDuration: Duration(seconds: 3),
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
                 child:   Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
@@ -105,8 +105,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 height: 30,
               ),
               DelayedDisplay(
-                delay: Duration(seconds: 4),
-                fadingDuration: Duration(seconds: 4),
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
                 child:   Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
@@ -124,8 +124,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 height: 20,
               ),
               DelayedDisplay(
-                delay: Duration(seconds: 5),
-                fadingDuration: Duration(seconds: 5),
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
                 child:   buildAppList(),
               ),
@@ -141,8 +141,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               DelayedDisplay(
-                delay: Duration(seconds: 6),
-                fadingDuration: Duration(seconds: 6),
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
                 child:   GestureDetector(
                   onTap: (){
