@@ -193,6 +193,11 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                           AppCard(
                             app.appName,
                             app.packageName,
+//                            app is ApplicationWithIcon
+//                                ? CircleAvatar(
+//                              backgroundImage: MemoryImage(app.icon),
+//                              backgroundColor: Colors.white,
+//                            ) : null,
                             kBlueColor,
                           ),
                           SizedBox(
