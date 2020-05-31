@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class AppCard extends StatelessWidget {
   var _name;
   var _description;
-  var _imageUrl;
+//  var _image;
   var _bgColor;
 
-  AppCard(this._name, this._description, this._imageUrl, this._bgColor);
+  AppCard(this._name, this._description, this._bgColor);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class AppCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(10),
           child: ListTile(
-            leading: Image.network(_imageUrl),
+//            leading: _image,
             title: Text(
               _name,
               style: TextStyle(

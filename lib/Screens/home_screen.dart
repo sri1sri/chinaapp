@@ -4,8 +4,11 @@ import 'package:chinaapp/global_file/common_variables/app_functions.dart';
 import 'package:chinaapp/global_file/common_widgets/app_card.dart';
 import 'package:chinaapp/global_file/common_widgets/offline_widgets/offline_widget.dart';
 import 'package:delayed_display/delayed_display.dart';
+import 'package:device_apps/device_apps.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:uninstall_apps/uninstall_apps.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,15 +26,26 @@ class F_HomeScreen extends StatefulWidget {
 class _F_HomeScreen extends State<F_HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return offlineWidget( context );
+    return offlineWidget(context);
+  }
+
+  Future<void> initPlatformState(String appID) async {
+    await UninstallApps.uninstall(appID);
+  }
+
+  Future<dynamic> dataa() {
+    return DeviceApps.getInstalledApplications(
+        includeAppIcons: true,
+        includeSystemApps: false,
+        onlyAppsWithLaunchIntent: false);
   }
 
   Widget offlineWidget(BuildContext context) {
     return CustomOfflineWidget(
       onlineChild: Padding(
-        padding: const EdgeInsets.fromLTRB( 0, 0, 0, 0 ),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Scaffold(
-          body: _buildContent( context ),
+          body: _buildContent(context),
         ),
       ),
     );
@@ -40,25 +54,31 @@ class _F_HomeScreen extends State<F_HomeScreen> {
   Widget _buildContent(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-        appBar: AppBar(
-          brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios,size: 30,color: kTitleTextColor,),
-            onPressed: (){
-              Navigator.pop(context, true);
-            },
+      appBar: AppBar(
+        brightness: Brightness.light,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            size: 30,
+            color: kTitleTextColor,
           ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.more_vert,size: 30,color: kTitleTextColor,),
-              onPressed: (){
-
-              },
-            ),
-          ],
+          onPressed: () {
+            Navigator.pop(context, true);
+          },
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.more_vert,
+              size: 30,
+              color: kTitleTextColor,
+            ),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
@@ -69,10 +89,13 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
-                child:   Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Lottie.network("https://assets4.lottiefiles.com/private_files/lf30_YWyaYi.json",height: 200,width: 200),
+                    Lottie.network(
+                        "https://assets4.lottiefiles.com/private_files/lf30_YWyaYi.json",
+                        height: 200,
+                        width: 200),
                   ],
                 ),
               ),
@@ -83,7 +106,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
-                child:    Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Text(
                     'China Apps Found in\nyour System.',
@@ -102,7 +125,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
-                child:   Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Text(
                     'The Apps which you are detelting will be permenently removed from your device.',
@@ -121,7 +144,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
-                child:   Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Text(
                     'Apps which detected',
@@ -140,7 +163,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
-                child:   buildAppList(),
+                child: buildAppList(),
               ),
             ],
           ),
@@ -148,88 +171,122 @@ class _F_HomeScreen extends State<F_HomeScreen> {
       ),
     );
   }
-}
 
   buildAppList() {
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 30,
-      ),
-      child: Column(
-        children: <Widget>[
-          AppCard(
-            'Facebook',
-            'FaceBook.inc - Social',
-            'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png',
-            kBlueColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'Instagram',
-            'FaceBook.inc - Social',
-            'https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png',
-            kYellowColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'TickTock',
-            'TikTok.inc - Social',
-            'https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png',
-            kOrangeColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'WhatsApp',
-            'Whatsapp.inc - Social',
-            'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/WhatsApp-512.png',
-            kGreenColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'Facebook',
-            'FaceBook.inc - Social',
-            'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png',
-            kBlueColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'Instagram',
-            'FaceBook.inc - Social',
-            'https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png',
-            kYellowColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'TickTock',
-            'TikTok.inc - Social',
-            'https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png',
-            kOrangeColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppCard(
-            'WhatsApp',
-            'Whatsapp.inc - Social',
-            'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/WhatsApp-512.png',
-            kGreenColor,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
-      ),
-    );
+        padding: EdgeInsets.symmetric(
+          horizontal: 30,
+        ),
+        child: FutureBuilder(
+            future: dataa(),
+            builder: (context, data) {
+              if (data.data == null) {
+                return Center(child: CircularProgressIndicator());
+              } else {
+                List<Application> apps = data.data;
+                print(apps);
+                return ListView.builder(
+                    itemBuilder: (context, position) {
+                      Application app = apps[position];
+                      return Column(
+                        children: <Widget>[
+                          AppCard(
+                            app.appName,
+                            app.packageName,
+                            kBlueColor,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+
+//                      ['com.skype.raider', 'com.kondasri.tellthetruth', 'com.linecorp.b612.android'].contains(app.packageName) ?
+//                          : Container(height: 0, width: 0,),
+                          Divider(
+                            height: 1.0,
+                          )
+                        ],
+                      );
+                    },
+                    itemCount: apps.length);
+              }
+            })
+
+//      Column(
+//        children: <Widget>[
+//          AppCard(
+//            'Facebook',
+//            'FaceBook.inc - Social',
+//            'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png',
+//            kBlueColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'Instagram',
+//            'FaceBook.inc - Social',
+//            'https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png',
+//            kYellowColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'TickTock',
+//            'TikTok.inc - Social',
+//            'https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png',
+//            kOrangeColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'WhatsApp',
+//            'Whatsapp.inc - Social',
+//            'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/WhatsApp-512.png',
+//            kGreenColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'Facebook',
+//            'FaceBook.inc - Social',
+//            'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png',
+//            kBlueColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'Instagram',
+//            'FaceBook.inc - Social',
+//            'https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png',
+//            kYellowColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'TickTock',
+//            'TikTok.inc - Social',
+//            'https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png',
+//            kOrangeColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          AppCard(
+//            'WhatsApp',
+//            'Whatsapp.inc - Social',
+//            'https://cdn2.iconfinder.com/data/icons/social-icons-33/128/WhatsApp-512.png',
+//            kGreenColor,
+//          ),
+//          SizedBox(
+//            height: 20,
+//          ),
+//        ],
+//      ),
+        );
   }
+}
