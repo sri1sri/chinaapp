@@ -33,7 +33,29 @@ class _F_HomeScreen extends State<F_HomeScreen> {
         onlyAppsWithLaunchIntent: false);
   }
 
-  final chineseApps = ['com.skype.raider', 'com.kondasri.tellthetruth', 'com.linecorp.b612.android'];
+  final chineseApps = ["com.zhiliaoapp.musically.go",
+    "com.uc.browser.en",
+    "video.like",
+    "com.ss.android.ugc.boom",
+    "sg.bigo.live",
+    "com.youdao.hindict",
+    "com.commsource.beautyplus",
+    "us.zoom.videomeetings",
+    "com.lenovo.anyshare.gps",
+    "com.UCMobile.intl",
+    "com.zhiliaoapp.musically",
+    "com.videochat.livu",
+    "com.kwai.video",
+    "com.domobile.applockwatcher",
+    "com.romwe",
+    "com.zzkko",
+    "com.foodshuttle.alldownloader",
+    "cn.xender",
+    "app.buzz.share",
+    "com.xprodev.cutcam",
+    "com.intsig.camscanner",
+    "club.fromfactory",
+    "com.uc.vmate"];
 
   @override
   Widget build(BuildContext context) {
@@ -76,96 +98,102 @@ class _F_HomeScreen extends State<F_HomeScreen> {
           ),
         ],
       ),
-      body: SafeArea(
-        bottom: false,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Lottie.network(
-                        "https://assets4.lottiefiles.com/private_files/lf30_YWyaYi.json",
-                        height: 200,
-                        width: 200),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    'China Apps Found in\nyour System.',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 32,
-                      color: kTitleTextColor,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    'The Apps which you are detelting will be permenently removed from your device.',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: kSearchTextColor,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    'Apps which detected',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: kTitleTextColor,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child: buildAppList(),
-              ),
-            ],
-          ),
-        ),
+      body:             DelayedDisplay(
+        delay: Duration(seconds: 1),
+        fadingDuration: Duration(seconds: 1),
+        slidingCurve: Curves.easeInCirc,
+        child: buildAppList(),
       ),
+
+
+//      SafeArea(
+//        bottom: false,
+//        child: Column(
+//          crossAxisAlignment: CrossAxisAlignment.start,
+//          children: <Widget>[
+////              DelayedDisplay(
+////                delay: Duration(seconds: 1),
+////                fadingDuration: Duration(seconds: 1),
+////                slidingCurve: Curves.easeInCirc,
+////                child: Row(
+////                  mainAxisAlignment: MainAxisAlignment.center,
+////                  children: [
+////                    Lottie.network(
+////                        "https://assets4.lottiefiles.com/private_files/lf30_YWyaYi.json",
+////                        height: 200,
+////                        width: 200),
+////                  ],
+////                ),
+////              ),
+//            SizedBox(
+//              height: 10,
+//            ),
+//            DelayedDisplay(
+//              delay: Duration(seconds: 1),
+//              fadingDuration: Duration(seconds: 1),
+//              slidingCurve: Curves.easeInCirc,
+//              child: Padding(
+//                padding: EdgeInsets.symmetric(horizontal: 30),
+//                child: Text(
+//                  'China Apps Found in\nyour System.',
+//                  style: TextStyle(
+//                    fontWeight: FontWeight.bold,
+//                    fontSize: 32,
+//                    color: kTitleTextColor,
+//                  ),
+//                ),
+//              ),
+//            ),
+//            SizedBox(
+//              height: 10,
+//            ),
+//            DelayedDisplay(
+//              delay: Duration(seconds: 1),
+//              fadingDuration: Duration(seconds: 1),
+//              slidingCurve: Curves.easeInCirc,
+//              child: Padding(
+//                padding: EdgeInsets.symmetric(horizontal: 30),
+//                child: Text(
+//                  'The Apps which you are detelting will be permenently removed from your device.',
+//                  style: TextStyle(
+//                    fontWeight: FontWeight.w600,
+//                    fontSize: 16,
+//                    color: kSearchTextColor,
+//                  ),
+//                ),
+//              ),
+//            ),
+//            SizedBox(
+//              height: 30,
+//            ),
+//            DelayedDisplay(
+//              delay: Duration(seconds: 1),
+//              fadingDuration: Duration(seconds: 1),
+//              slidingCurve: Curves.easeInCirc,
+//              child: Padding(
+//                padding: EdgeInsets.symmetric(horizontal: 30),
+//                child: Text(
+//                  'Apps which detected',
+//                  style: TextStyle(
+//                    fontWeight: FontWeight.bold,
+//                    color: kTitleTextColor,
+//                    fontSize: 18,
+//                  ),
+//                ),
+//              ),
+//            ),
+//            SizedBox(
+//              height: 20,
+//            ),
+//            DelayedDisplay(
+//              delay: Duration(seconds: 1),
+//              fadingDuration: Duration(seconds: 1),
+//              slidingCurve: Curves.easeInCirc,
+//              child: buildAppList(),
+//            ),
+//          ],
+//        ),
+//      ),
     );
   }
 
@@ -189,8 +217,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       return Column(
                         children: <Widget>[
 
-//                          chineseApps.contains(app.packageName) ?
-                          AppCard(
+                      chineseApps.contains(app.packageName) ? AppCard(
                             app.appName,
                             app is ApplicationWithIcon
                                 ? CircleAvatar(
@@ -203,8 +230,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                                       deviceApps();
                                     });
                             }
-                          ),
-//                              : Container(child: Text("You don't have any chinese apps in your mobile."),),
+                          ): Container(height: 0, width: 0,),
+                          //Container(child: Text("You don't have any chinese apps in your mobile."),),
                           Divider(
                             height: 20.0,
                           )
