@@ -37,10 +37,12 @@ dependencies:
   flutter_offline: 0.3.0
   animations: 1.0.0+5
   delayed_display: 1.0.3
-#  google_fonts: ^1.1.0
+  google_fonts: ^1.1.0
   device_apps: ^1.0.9
   uninstall_apps: ^0.0.4
 #  firebase_admob: 0.9.3+2
+  overlay_container: 0.0.4+1
+  url_launcher: 5.4.10
 
 
 
@@ -79,6 +81,8 @@ flutter:
   # https://flutter.dev/assets-and-images/#resolution-aware.
   assets:
     - images/no internet.flr
+    - images/intro.json
+    - images/home.json
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
