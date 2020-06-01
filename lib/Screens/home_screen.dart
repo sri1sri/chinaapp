@@ -1,9 +1,10 @@
 import 'package:chinaapp/constant.dart';
-import 'package:chinaapp/global_file/common_variables/app_functions.dart';
-import 'package:chinaapp/global_file/common_widgets/app_card.dart';
+import 'package:chinaapp/global_file/app_card.dart';
+import 'package:chinaapp/global_file/app_functions.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:device_apps/device_apps.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:overlay_container/overlay_container.dart';
 import 'package:social_share/social_share.dart';
@@ -346,11 +347,9 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                                       deviceApps();
                                     });
                             }
-                          ): Container(height: 0, width: 0,),
+                          ): null,
+                          SizedBox(height: 10,),
                           //Container(child: Text("You don't have any chinese apps in your mobile."),),
-                          Divider(
-                            height: getDynamicHeight(20, context),
-                          )
                         ],
                       );
                     },
@@ -644,5 +643,4 @@ Widget _Notificationcard(String title,String description,BuildContext context)
       ),
     ),
   );
-
 }

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:chinaapp/Screens/home_screen.dart';
 import 'package:chinaapp/constant.dart';
-import 'package:chinaapp/global_file/common_variables/app_functions.dart';
+import 'package:chinaapp/global_file/app_functions.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -553,5 +553,4 @@ Widget _Notificationcard(String title,String description,BuildContext context)
       ),
     ),
   );
-
 }

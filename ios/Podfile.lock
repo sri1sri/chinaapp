@@ -1,9 +1,4 @@
 PODS:
-  - connectivity (0.0.1):
-    - Flutter
-    - Reachability
-  - connectivity_macos (0.0.1):
-    - Flutter
   - device_apps (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -11,7 +6,6 @@ PODS:
     - Flutter
   - path_provider_macos (0.0.1):
     - Flutter
-  - Reachability (3.2)
   - social_share (0.0.1):
     - Flutter
   - uninstall_apps (0.0.1):
@@ -24,8 +18,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - connectivity (from `.symlinks/plugins/connectivity/ios`)
-  - connectivity_macos (from `.symlinks/plugins/connectivity_macos/ios`)
   - device_apps (from `.symlinks/plugins/device_apps/ios`)
   - Flutter (from `Flutter`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
@@ -36,15 +28,7 @@ DEPENDENCIES:
   - url_launcher_macos (from `.symlinks/plugins/url_launcher_macos/ios`)
   - url_launcher_web (from `.symlinks/plugins/url_launcher_web/ios`)
 
-SPEC REPOS:
-  trunk:
-    - Reachability
-
 EXTERNAL SOURCES:
-  connectivity:
-    :path: ".symlinks/plugins/connectivity/ios"
-  connectivity_macos:
-    :path: ".symlinks/plugins/connectivity_macos/ios"
   device_apps:
     :path: ".symlinks/plugins/device_apps/ios"
   Flutter:
@@ -65,13 +49,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher_web/ios"
 
 SPEC CHECKSUMS:
-  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
-  connectivity_macos: e2e9731b6b22dda39eb1b128f6969d574460e191
   device_apps: 099590c646da044f7f410fef63229fc0aedb35a8
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   social_share: 702a5e3842addd22db515aa9e1e00a4b80a0296d
   uninstall_apps: ebc3387d43c7d4a16d7121aec05bb07c5197f5c7
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
@@ -80,4 +61,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
