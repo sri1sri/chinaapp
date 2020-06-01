@@ -60,7 +60,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
               -50,
             ),
             child: Container(
-              height: 200,
+              height: getDynamicHeight(200),
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -86,24 +86,24 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40),
+                          width: getDynamicWidth(40),
                         ),
                         SizedBox(
-                          width:15,
+                          width:getDynamicWidth(15),
                         ),
                         Text(
                           "Contact Us",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: getDynamicHeight(20),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -113,24 +113,24 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       children: [
                         Image.network(
                           "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40),
+                          width: getDynamicWidth(40),
                         ),
                         SizedBox(
-                          width:15,
+                          width:getDynamicWidth(15),
                         ),
                         Text(
                           "Privacy Policy",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: getDynamicHeight(20),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -141,18 +141,18 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40),
+                          width: getDynamicWidth(40),
                         ),
                         SizedBox(
-                          width:15,
+                          width:getDynamicWidth(15),
                         ),
                         Text(
                           "Share",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18),
                           ),
                         )
                       ],
@@ -182,13 +182,13 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       'Remove China Apps On\nYour Device',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 32,
+                        fontSize: getDynamicTextSize(32),
                         color: kTitleTextColor,
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: getDynamicHeight(20),
                   ),
                   DelayedDisplay(
                     delay: Duration(seconds: 1),
@@ -197,13 +197,13 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                     child: Text(
                       'Click on the "Scan Now" to find installed\nChina Apps in your system.',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: getDynamicTextSize(16),
                         color: kTitleTextColor.withOpacity(0.7),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: getDynamicHeight(20),
                   ),
                   DelayedDisplay(
                     delay: Duration(seconds: 1),
@@ -230,7 +230,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                         'Scan Now',
                         style: TextStyle(
                           color: kWhiteColor,
-                          fontSize: 18,
+                          fontSize: getDynamicTextSize(18),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -244,7 +244,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
             delay: Duration(seconds: 1),
             fadingDuration: Duration(seconds: 1),
             slidingCurve: Curves.easeInCirc,
-            child: Lottie.asset("images/intro.json",height: 400,width: 500),
+            child: Lottie.asset("images/intro.json",height: 500,width: 500),
           ),
           DelayedDisplay(
             delay: Duration(seconds: 1),
