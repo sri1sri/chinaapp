@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:chinaapp/Screens/home_screen.dart';
 import 'package:chinaapp/constant.dart';
 import 'package:chinaapp/global_file/common_variables/app_functions.dart';
@@ -32,6 +34,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(window.physicalSize.width);
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Scaffold(

@@ -12,6 +12,8 @@ PODS:
   - path_provider_macos (0.0.1):
     - Flutter
   - Reachability (3.2)
+  - social_share (0.0.1):
+    - Flutter
   - uninstall_apps (0.0.1):
     - Flutter
   - url_launcher (0.0.1):
@@ -28,6 +30,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
+  - social_share (from `.symlinks/plugins/social_share/ios`)
   - uninstall_apps (from `.symlinks/plugins/uninstall_apps/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
   - url_launcher_macos (from `.symlinks/plugins/url_launcher_macos/ios`)
@@ -50,6 +53,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   path_provider_macos:
     :path: ".symlinks/plugins/path_provider_macos/ios"
+  social_share:
+    :path: ".symlinks/plugins/social_share/ios"
   uninstall_apps:
     :path: ".symlinks/plugins/uninstall_apps/ios"
   url_launcher:
@@ -67,6 +72,7 @@ SPEC CHECKSUMS:
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  social_share: 702a5e3842addd22db515aa9e1e00a4b80a0296d
   uninstall_apps: ebc3387d43c7d4a16d7121aec05bb07c5197f5c7
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
   url_launcher_macos: fd7894421cd39320dce5f292fc99ea9270b2a313
