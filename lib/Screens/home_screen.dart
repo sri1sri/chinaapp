@@ -347,7 +347,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                                       deviceApps();
                                     });
                             }
-                          ): null,
+                          ): Container(height: 0, width: 0,),
                           SizedBox(height: 10,),
                           //Container(child: Text("You don't have any chinese apps in your mobile."),),
                         ],
