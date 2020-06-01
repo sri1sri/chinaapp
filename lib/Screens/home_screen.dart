@@ -1,4 +1,5 @@
 import 'package:chinaapp/constant.dart';
+import 'package:chinaapp/global_file/common_variables/app_functions.dart';
 import 'package:chinaapp/global_file/common_widgets/app_card.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:device_apps/device_apps.dart';
@@ -132,8 +133,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40),
+                          width: getDynamicWidth(40),
                         ),
                         SizedBox(
                           width:15,
@@ -173,7 +174,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18),
                           ),
                         )
                       ],

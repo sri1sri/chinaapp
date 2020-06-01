@@ -1,6 +1,8 @@
 import 'package:chinaapp/Screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'global_file/common_variables/app_functions.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
 void main() {

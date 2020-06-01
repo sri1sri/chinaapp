@@ -1,5 +1,6 @@
 import 'package:chinaapp/Screens/home_screen.dart';
 import 'package:chinaapp/constant.dart';
+import 'package:chinaapp/global_file/common_variables/app_functions.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -27,6 +28,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
       _dropdownShown = !_dropdownShown;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -1,27 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-Size SCREEN_SIZE;
 double IPHONE_11_PRO_MAX_HEIGHT = 896;
 double IPHONE_11_PRO_MAX_Width = 414;
 
-double getDynamicHeight( double height,){
+double getDynamicHeight(double height){
   double actualHeightPercentage = height/IPHONE_11_PRO_MAX_HEIGHT;
-  double dynamicHeight = actualHeightPercentage * SCREEN_SIZE.height;
+  double dynamicHeight = actualHeightPercentage * window.physicalSize.height;
 
   return dynamicHeight;
 }
 
 double getDynamicWidth( double width){
   double actualHeightPercentage = width/IPHONE_11_PRO_MAX_Width;
-  double dynamicWidth = actualHeightPercentage * SCREEN_SIZE.width;
+  double dynamicWidth = actualHeightPercentage * window.physicalSize.width;
 
   return dynamicWidth;
 }
 
 double getDynamicTextSize(double size){
   double actualSizePercentage = size/IPHONE_11_PRO_MAX_Width;
-  double dynamicTextSize = actualSizePercentage * SCREEN_SIZE.width;
+  double dynamicTextSize = actualSizePercentage * window.physicalSize.width;
 
   return dynamicTextSize;
 }
