@@ -87,10 +87,10 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                     },
                     child: Row(
                       children: [
-                        Image.network(
-                          "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: getDynamicHeight(40, context),
-                          width: getDynamicWidth(40, context),
+                        Image.asset(
+                          "images/1.png",
+                          height: getDynamicHeight(30, context),
+                          width: getDynamicWidth(30, context),
                         ),
                         SizedBox(
                           width:getDynamicWidth(15, context),
@@ -106,7 +106,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: getDynamicHeight(20, context),),
+                  SizedBox(height: getDynamicHeight(5, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -114,10 +114,10 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                     },
                     child: Row(
                       children: [
-                        Image.network(
-                          "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
-                          height: getDynamicHeight(40, context),
-                          width: getDynamicWidth(40, context),
+                        Image.asset(
+                          "images/2.png",
+                          height: getDynamicHeight(30, context),
+                          width: getDynamicWidth(30, context),
                         ),
                         SizedBox(
                           width:getDynamicWidth(15, context),
@@ -133,7 +133,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: getDynamicHeight(20, context),),
+                  SizedBox(height: getDynamicHeight(5, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -142,10 +142,10 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                     },
                     child: Row(
                       children: [
-                        Image.network(
-                          "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
-                          height: getDynamicHeight(40, context),
-                          width: getDynamicWidth(40, context),
+                        Image.asset(
+                          "images/3.png",
+                          height: getDynamicHeight(30, context),
+                          width: getDynamicWidth(30, context),
                         ),
                         SizedBox(
                           width:getDynamicWidth(15, context),
@@ -247,7 +247,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
             delay: Duration(seconds: 1),
             fadingDuration: Duration(seconds: 1),
             slidingCurve: Curves.easeInCirc,
-            child: Lottie.asset("images/intro.json",height: getDynamicHeight(500, context),width: getDynamicWidth(500, context)),
+            child: Lottie.asset("images/intro.json",height: getDynamicHeight(400, context),width: getDynamicWidth(500, context)),
           ),
           DelayedDisplay(
             delay: Duration(seconds: 1),
@@ -263,7 +263,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
             ),
           ),
           SizedBox(
-            height: getDynamicHeight(10, context),
+            height: getDynamicHeight(30, context),
           ),
         ],
       ),
@@ -364,8 +364,8 @@ void showContactUsDialog(BuildContext context) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
+                  Image.asset(
+                    "images/1.png",
                     height: getDynamicHeight(40, context),
                     width: getDynamicWidth(40, context),
                   ),
@@ -465,8 +465,8 @@ void showPrivacyPolicyDialog(BuildContext context) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
+                  Image.asset(
+                    "images/2.png",
                     height: getDynamicHeight(40, context),
                     width: getDynamicWidth(40, context),
                   ),

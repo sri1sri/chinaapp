@@ -34,7 +34,6 @@ dependencies:
   lottie: 0.3.6
   delayed_display: 1.0.3
   social_share: ^2.0.4
-
   google_fonts: ^1.1.0
   url_launcher: 5.4.10
 
@@ -66,6 +65,9 @@ flutter:
   assets:
     - images/intro.json
     - images/home.json
+    - images/1.png
+    - images/2.png
+    - images/3.png
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 

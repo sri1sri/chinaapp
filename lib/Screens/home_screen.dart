@@ -133,10 +133,10 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                     },
                     child: Row(
                       children: [
-                        Image.network(
-                          "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: getDynamicHeight(40, context),
-                          width: getDynamicWidth(40, context),
+                        Image.asset(
+                          "images/1.png",
+                          height: getDynamicHeight(30, context),
+                          width: getDynamicWidth(30, context),
                         ),
                         SizedBox(
                           width:getDynamicWidth(15, context),
@@ -152,7 +152,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: getDynamicHeight(20, context),),
+                  SizedBox(height: getDynamicHeight(5, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -160,10 +160,10 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                     },
                     child: Row(
                       children: [
-                        Image.network(
-                          "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
-                          height: getDynamicHeight(40, context),
-                          width: getDynamicWidth(40, context),
+                        Image.asset(
+                          "images/2.png",
+                          height: getDynamicHeight(30, context),
+                          width: getDynamicWidth(30, context),
                         ),
                         SizedBox(
                           width:getDynamicWidth(15, context),
@@ -179,7 +179,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: getDynamicHeight(20, context),),
+                  SizedBox(height: getDynamicHeight(5, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -188,10 +188,10 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                     },
                     child: Row(
                       children: [
-                        Image.network(
-                          "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
-                          height: getDynamicHeight(40, context),
-                          width: getDynamicWidth(40, context),
+                        Image.asset(
+                          "images/3.png",
+                          height: getDynamicHeight(30, context),
+                          width: getDynamicWidth(30, context),
                         ),
                         SizedBox(
                           width:getDynamicWidth(15, context),
@@ -301,12 +301,49 @@ class _F_HomeScreen extends State<F_HomeScreen> {
               SizedBox(
                 height: getDynamicHeight(20, context),
               ),
-              DelayedDisplay(
-                delay: Duration(seconds: 1),
-                fadingDuration: Duration(seconds: 1),
-                slidingCurve: Curves.easeInCirc,
-                child: buildAppList(),
-              ),
+              FutureBuilder(
+                  future: deviceApps(),
+                  builder: (context, data) {
+                    if (data.data == null) {
+                      return Center(child: CircularProgressIndicator());
+                    } else {
+                      List<Application> apps = data.data;
+                      print(apps);
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          itemBuilder: (context, position) {
+                            Application app = apps[position];
+                            return Column(
+                              children: <Widget>[
+
+                                chineseApps.contains(app.packageName) ? AppCard(
+                                    app.appName,
+                                    app is ApplicationWithIcon
+                                        ? CircleAvatar(
+                                      backgroundImage: MemoryImage(app.icon),
+                                      backgroundColor: Colors.transparent,
+                                    ) : null,
+                                        (){
+                                      initPlatformState(app.packageName);
+                                      setState(() {
+                                        deviceApps();
+                                      });
+                                    }
+                                ): Container(height: 0, width: 0,),
+                                SizedBox(height: 10,),
+                                //Container(child: Text("You don't have any chinese apps in your mobile."),),
+                              ],
+                            );
+                          },
+                          itemCount: apps.length);
+                    }
+                  })
+//              DelayedDisplay(
+//                delay: Duration(seconds: 1),
+//                fadingDuration: Duration(seconds: 1),
+//                slidingCurve: Curves.easeInCirc,
+//                child: buildAppList(),
+//              ),
             ],
           ),
         ),
@@ -454,8 +491,8 @@ void showContactUsDialog(BuildContext context) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
+                  Image.asset(
+                    "images/1.png",
                     height: getDynamicHeight(40, context),
                     width: getDynamicWidth(40, context),
                   ),
@@ -555,8 +592,8 @@ void showPrivacyPolicyDialog(BuildContext context) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
+                  Image.asset(
+                    "images/2.png",
                     height: getDynamicHeight(40, context),
                     width: getDynamicWidth(40, context),
                   ),
