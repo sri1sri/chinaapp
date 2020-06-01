@@ -108,7 +108,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
               -50,
             ),
             child: Container(
-              height: 200,
+              height: getDynamicHeight(200, context),
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -134,24 +134,24 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40, context),
+                          width: getDynamicWidth(40, context),
                         ),
                         SizedBox(
-                          width:15,
+                          width:getDynamicWidth(15, context),
                         ),
                         Text(
                           "Contact Us",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18, context),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: getDynamicHeight(20, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -161,24 +161,24 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       children: [
                         Image.network(
                           "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40, context),
+                          width: getDynamicWidth(40, context),
                         ),
                         SizedBox(
-                          width:15,
+                          width:getDynamicWidth(15, context),
                         ),
                         Text(
                           "Privacy Policy",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18, context),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: getDynamicHeight(20, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -189,18 +189,18 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
-                          height: 40,
-                          width: 40,
+                          height: getDynamicHeight(40, context),
+                          width: getDynamicWidth(40, context),
                         ),
                         SizedBox(
-                          width:15,
+                          width:getDynamicWidth(15, context),
                         ),
                         Text(
                           "Share",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: 18,
+                            fontSize: getDynamicTextSize(18, context),
                           ),
                         )
                       ],
@@ -221,92 +221,93 @@ class _F_HomeScreen extends State<F_HomeScreen> {
 //      ),
 
 
-      SafeArea(
-        bottom: false,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+      Container(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+                DelayedDisplay(
+                  delay: Duration(seconds: 1),
+                  fadingDuration: Duration(seconds: 1),
+                  slidingCurve: Curves.easeInCirc,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Lottie.asset(
+                          "images/home.json",
+                          height: getDynamicHeight(200,context),
+                          width: getDynamicWidth(200, context)),
+                    ],
+                  ),
+                ),
+              SizedBox(
+                height: getDynamicHeight(10,context),
+              ),
               DelayedDisplay(
                 delay: Duration(seconds: 1),
                 fadingDuration: Duration(seconds: 1),
                 slidingCurve: Curves.easeInCirc,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Lottie.asset(
-                        "images/home.json",
-                        height: 200,
-                        width: 200),
-                  ],
-                ),
-              ),
-            SizedBox(
-              height: 10,
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              fadingDuration: Duration(seconds: 1),
-              slidingCurve: Curves.easeInCirc,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'China Apps Found in\nyour System.',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                    color: kTitleTextColor,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: getDynamicWidth(30, context)),
+                  child: Text(
+                    'China Apps Found in\nyour System.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: getDynamicTextSize(32, context),
+                      color: kTitleTextColor,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              fadingDuration: Duration(seconds: 1),
-              slidingCurve: Curves.easeInCirc,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'The Apps which you are detelting will be permenently removed from your device.',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: kSearchTextColor,
+              SizedBox(
+                height: getDynamicHeight(10,context),
+              ),
+              DelayedDisplay(
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
+                slidingCurve: Curves.easeInCirc,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: getDynamicWidth(30, context)),
+                  child: Text(
+                    'The Apps which you are detelting will be permenently removed from your device.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: getDynamicTextSize(16, context),
+                      color: kSearchTextColor,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              fadingDuration: Duration(seconds: 1),
-              slidingCurve: Curves.easeInCirc,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'Apps which detected',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kTitleTextColor,
-                    fontSize: 18,
+              SizedBox(
+                height: getDynamicHeight(30, context),
+              ),
+              DelayedDisplay(
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
+                slidingCurve: Curves.easeInCirc,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: getDynamicWidth(30, context)),
+                  child: Text(
+                    'Apps which detected',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: kTitleTextColor,
+                      fontSize: getDynamicHeight(18, context),
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              fadingDuration: Duration(seconds: 1),
-              slidingCurve: Curves.easeInCirc,
-              child: buildAppList(),
-            ),
-          ],
+              SizedBox(
+                height: getDynamicHeight(20, context),
+              ),
+              DelayedDisplay(
+                delay: Duration(seconds: 1),
+                fadingDuration: Duration(seconds: 1),
+                slidingCurve: Curves.easeInCirc,
+                child: buildAppList(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -315,7 +316,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
   buildAppList() {
     return Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 30,
+          horizontal: getDynamicWidth(30, context),
         ),
         child: FutureBuilder(
             future: deviceApps(),
@@ -348,7 +349,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                           ): Container(height: 0, width: 0,),
                           //Container(child: Text("You don't have any chinese apps in your mobile."),),
                           Divider(
-                            height: 20.0,
+                            height: getDynamicHeight(20, context),
                           )
                         ],
                       );
@@ -370,36 +371,36 @@ void showContactUsDialog(BuildContext context) {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
       ),
-      height: 250.0,
-      width: 300.0,
+      height: getDynamicHeight(250,context),
+      width: getDynamicWidth(300, context),
       child: Stack(
         children: <Widget>[
           Container(
             width: double.infinity,
-            height: 300,
+            height: getDynamicHeight(300, context),
             decoration: BoxDecoration(
               color: Colors.grey[100],
               borderRadius: BorderRadius.circular(12.0),
             ),
             child: Column(
               children: [
-                SizedBox(height: 100,),
+                SizedBox(height: getDynamicHeight(100, context),),
                 Text(
                   "For any queries please contact us",style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: kTitleTextColor,
-                  fontSize: 16,
+                  fontSize: getDynamicTextSize(16, context),
                 ),
                   // style: smallTextStyleDark,
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getDynamicHeight(20, context),),
                 Padding(
                   padding: const EdgeInsets.only(left:10.0,right: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
-                        height: 60.0,
+                        height: getDynamicHeight(60, context),
                         width: MediaQuery.of(context).size.width,
                         child: GestureDetector(
                           onTap: () {
@@ -423,7 +424,7 @@ void showContactUsDialog(BuildContext context) {
                                   child: Text("kondasri98@yahoo.com",style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: kTitleTextColor,
-                                    fontSize: 16,
+                                    fontSize: getDynamicTextSize(16, context),
                                   ),
                                   ),
                                 )
@@ -440,7 +441,7 @@ void showContactUsDialog(BuildContext context) {
           ),
           Container(
             width: double.infinity,
-            height: 60,
+            height: getDynamicHeight(60, context),
             alignment: Alignment.bottomCenter,
             decoration: BoxDecoration(
               color: kTitleTextColor,
@@ -456,22 +457,22 @@ void showContactUsDialog(BuildContext context) {
                 children: [
                   Image.network(
                     "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                    height: 40,
-                    width: 40,
+                    height: getDynamicHeight(40, context),
+                    width: getDynamicWidth(40, context),
                   ),
                   SizedBox(
-                    width:15,
+                    width:getDynamicWidth(15, context),
                   ),
                   Text(
                     "Contact Us",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: kWhiteColor,
-                      fontSize: 22,
+                      fontSize: getDynamicTextSize(22, context),
                     ),
                   ),
                   SizedBox(
-                    width:15,
+                    width:getDynamicWidth(15, context),
                   ),
                 ],
               ),
@@ -526,22 +527,22 @@ void showPrivacyPolicyDialog(BuildContext context) {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: 80,),
-                  _Notificationcard("THIRD PARTY SERVICES","This App will not use any third party payment processor to accept payments when you use the application. Such third party processor's use of your personal information is not suppored and managed by their privacy policy. For these service providers, This App recommends that you read their privacy policy to better understand how they use your personal information. "),
-                  SizedBox(height: 10,),
-                  _Notificationcard("DISCLAIMER","This is committed to honoring the privacy of its customers and visitors. Details which you are provided will not sell or share your personal information with third party organizations other than in the ways listed in this Privacy Policy. It only collects some basic information to better their experience by communicating eachother, deleting the apps. This Privacy Policy applies to the entire Application : www.removechinaapps.com app."),
-                  SizedBox(height: 10,),
-                  _Notificationcard("SECURITY", "Remove China Apps – as a application hosted by Herms & Touth – stores all user information in a secure database protected by a variety of industry standard access controls. Secure passwords, SSL encryption, diskbased encryption, firewalls, and other measures are in place to help (Firebase) protect your data. However, no company, can fully eliminate security risks associated with the transmission of personal information through online transactions, and you do so at your own risk."),
-                  SizedBox(height: 10,),
-                  _Notificationcard("COOKIES","While navigating this application your web browser may use 'cookies' to analyze trends and track your movement to gather information about the site as a whole. app allows Firebase to use cookies for authentication, tracking user sessions, preferences, and movements around the site to understand the site's marketing and performance analytics. Users can control the use of cookies at the individual browser level. If you decide to reject cookies, it may limit your ability to use some features of the site."),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getDynamicHeight(80, context),),
+                  _Notificationcard("THIRD PARTY SERVICES","This App will not use any third party payment processor to accept payments when you use the application. Such third party processor's use of your personal information is not suppored and managed by their privacy policy. For these service providers, This App recommends that you read their privacy policy to better understand how they use your personal information. ",context),
+                  SizedBox(height: getDynamicHeight(10, context),),
+                  _Notificationcard("DISCLAIMER","This is committed to honoring the privacy of its customers and visitors. Details which you are provided will not sell or share your personal information with third party organizations other than in the ways listed in this Privacy Policy. It only collects some basic information to better their experience by communicating eachother, deleting the apps. This Privacy Policy applies to the entire Application : www.removechinaapps.com app.",context),
+                  SizedBox(height: getDynamicHeight(10, context),),
+                  _Notificationcard("SECURITY", "Remove China Apps – as a application hosted by Herms & Touth – stores all user information in a secure database protected by a variety of industry standard access controls. Secure passwords, SSL encryption, diskbased encryption, firewalls, and other measures are in place to help (Firebase) protect your data. However, no company, can fully eliminate security risks associated with the transmission of personal information through online transactions, and you do so at your own risk.",context),
+                  SizedBox(height: getDynamicHeight(10, context),),
+                  _Notificationcard("COOKIES","While navigating this application your web browser may use 'cookies' to analyze trends and track your movement to gather information about the site as a whole. app allows Firebase to use cookies for authentication, tracking user sessions, preferences, and movements around the site to understand the site's marketing and performance analytics. Users can control the use of cookies at the individual browser level. If you decide to reject cookies, it may limit your ability to use some features of the site.",context),
+                  SizedBox(height: getDynamicHeight(10, context),),
                 ],
               ),
             ),
           ),
           Container(
             width: double.infinity,
-            height: 60,
+            height: getDynamicHeight(60,context),
             alignment: Alignment.bottomCenter,
             decoration: BoxDecoration(
               color: kTitleTextColor,
@@ -557,22 +558,22 @@ void showPrivacyPolicyDialog(BuildContext context) {
                 children: [
                   Image.network(
                     "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
-                    height: 40,
-                    width: 40,
+                    height: getDynamicHeight(40, context),
+                    width: getDynamicWidth(40, context),
                   ),
                   SizedBox(
-                    width:15,
+                    width:getDynamicWidth(15, context),
                   ),
                   Text(
                     "Privacy Policy",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: kWhiteColor,
-                      fontSize: 22,
+                      fontSize: getDynamicTextSize(22,context),
                     ),
                   ),
                   SizedBox(
-                    width:15,
+                    width:getDynamicWidth(15, context),
                   ),
                 ],
               ),
@@ -614,7 +615,7 @@ void customLaunch(command) async{
   }
 }
 
-Widget _Notificationcard(String title,String description)
+Widget _Notificationcard(String title,String description,BuildContext context)
 {
   return Container(
     width: double.infinity,
@@ -628,15 +629,15 @@ Widget _Notificationcard(String title,String description)
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: kTitleTextColor,
-              fontSize: 16,
+              fontSize: getDynamicTextSize(16,context),
             ),
 
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: getDynamicHeight(10, context),),
           Text(description,
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: getDynamicTextSize(16,context),
               color: kSearchTextColor,
             ),)
         ],

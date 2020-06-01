@@ -6,7 +6,7 @@ double IPHONE_11_PRO_MAX_Width = 414;
 
 double getDynamicHeight(double height, BuildContext context){
   double actualHeightPercentage = height/IPHONE_11_PRO_MAX_HEIGHT;
-  double dynamicHeight = actualHeightPercentage * MediaQuery.of(context).size.width;
+  double dynamicHeight = actualHeightPercentage * MediaQuery.of(context).size.height;
 
   return dynamicHeight;
 }
