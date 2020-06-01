@@ -6,6 +6,7 @@ import 'package:device_apps/device_apps.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:overlay_container/overlay_container.dart';
+import 'package:social_share/social_share.dart';
 import 'package:uninstall_apps/uninstall_apps.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -107,7 +108,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
               -50,
             ),
             child: Container(
-              height: 170,
+              height: 200,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -133,8 +134,8 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: getDynamicHeight(40),
-                          width: getDynamicWidth(40),
+                          height: 40,
+                          width: 40,
                         ),
                         SizedBox(
                           width:15,
@@ -150,10 +151,7 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                       ],
                     ),
                   ),
-                  Divider(
-                    thickness: 1,
-                    color: Colors.black54,
-                  ),
+                  SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -174,7 +172,35 @@ class _F_HomeScreen extends State<F_HomeScreen> {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: getDynamicTextSize(18),
+                            fontSize: 18,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  GestureDetector(
+                    onTap: () {
+                      _toggleDropdown();
+                      SocialShare.shareWhatsapp(
+                          "I want you delete all the China Apps! Please install this app from Android: https://play.google.com/store/apps/details?id=com.kondasri.tellthetruth");
+                    },
+                    child: Row(
+                      children: [
+                        Image.network(
+                          "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
+                          height: 40,
+                          width: 40,
+                        ),
+                        SizedBox(
+                          width:15,
+                        ),
+                        Text(
+                          "Share",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: kTitleTextColor,
+                            fontSize: 18,
                           ),
                         )
                       ],

@@ -43,6 +43,7 @@ dependencies:
 #  firebase_admob: 0.9.3+2
   overlay_container: 0.0.4+1
   url_launcher: 5.4.10
+  social_share: ^2.0.4
 
 
 

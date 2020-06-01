@@ -5,6 +5,7 @@ import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:overlay_container/overlay_container.dart';
+import 'package:social_share/social_share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -59,7 +60,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
               -50,
             ),
             child: Container(
-              height: 170,
+              height: 200,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -102,10 +103,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       ],
                     ),
                   ),
-                  Divider(
-                    thickness: 1,
-                    color: Colors.black54,
-                  ),
+                  SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -123,6 +121,34 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                         ),
                         Text(
                           "Privacy Policy",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: kTitleTextColor,
+                            fontSize: 18,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  GestureDetector(
+                    onTap: () {
+                      _toggleDropdown();
+                      SocialShare.shareWhatsapp(
+                          "I want you delete all the China Apps! Please install this app from Android: https://play.google.com/store/apps/details?id=com.kondasri.tellthetruth");
+                    },
+                    child: Row(
+                      children: [
+                        Image.network(
+                          "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
+                          height: 40,
+                          width: 40,
+                        ),
+                        SizedBox(
+                          width:15,
+                        ),
+                        Text(
+                          "Share",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
