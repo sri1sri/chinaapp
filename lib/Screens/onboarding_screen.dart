@@ -63,7 +63,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
               -50,
             ),
             child: Container(
-              height: getDynamicHeight(200),
+              height: getDynamicHeight(200, context),
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -89,24 +89,24 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/seo-web-3-1/128/Vigor_Contact-info-us-email-512.png",
-                          height: getDynamicHeight(40),
-                          width: getDynamicWidth(40),
+                          height: getDynamicHeight(40, context),
+                          width: getDynamicWidth(40, context),
                         ),
                         SizedBox(
-                          width:getDynamicWidth(15),
+                          width:getDynamicWidth(15, context),
                         ),
                         Text(
                           "Contact Us",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: getDynamicTextSize(18),
+                            fontSize: getDynamicTextSize(18, context),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: getDynamicHeight(20),),
+                  SizedBox(height: getDynamicHeight(20, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -116,24 +116,24 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       children: [
                         Image.network(
                           "https://cdn2.iconfinder.com/data/icons/market-research-wildberry-vol-2/256/Privacy_Policy-512.png",
-                          height: getDynamicHeight(40),
-                          width: getDynamicWidth(40),
+                          height: getDynamicHeight(40, context),
+                          width: getDynamicWidth(40, context),
                         ),
                         SizedBox(
-                          width:getDynamicWidth(15),
+                          width:getDynamicWidth(15, context),
                         ),
                         Text(
                           "Privacy Policy",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: getDynamicTextSize(18),
+                            fontSize: getDynamicTextSize(18, context),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: getDynamicHeight(20),),
+                  SizedBox(height: getDynamicHeight(20, context),),
                   GestureDetector(
                     onTap: () {
                       _toggleDropdown();
@@ -144,18 +144,18 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       children: [
                         Image.network(
                           "https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_026_share_link_friends_android_material-512.png",
-                          height: getDynamicHeight(40),
-                          width: getDynamicWidth(40),
+                          height: getDynamicHeight(40, context),
+                          width: getDynamicWidth(40, context),
                         ),
                         SizedBox(
-                          width:getDynamicWidth(15),
+                          width:getDynamicWidth(15, context),
                         ),
                         Text(
                           "Share",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: kTitleTextColor,
-                            fontSize: getDynamicTextSize(18),
+                            fontSize: getDynamicTextSize(18, context),
                           ),
                         )
                       ],
@@ -185,13 +185,13 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                       'Remove China Apps On\nYour Device',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: getDynamicTextSize(32),
+                        fontSize: getDynamicTextSize(32, context),
                         color: kTitleTextColor,
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: getDynamicHeight(20),
+                    height: getDynamicHeight(20, context),
                   ),
                   DelayedDisplay(
                     delay: Duration(seconds: 1),
@@ -200,13 +200,13 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                     child: Text(
                       'Click on the "Scan Now" to find installed\nChina Apps in your system.',
                       style: TextStyle(
-                        fontSize: getDynamicTextSize(16),
+                        fontSize: getDynamicTextSize(16, context),
                         color: kTitleTextColor.withOpacity(0.7),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: getDynamicHeight(20),
+                    height: getDynamicHeight(20, context),
                   ),
                   DelayedDisplay(
                     delay: Duration(seconds: 1),
@@ -233,7 +233,7 @@ class _F_OnboardingScreen extends State<F_OnboardingScreen> {
                         'Scan Now',
                         style: TextStyle(
                           color: kWhiteColor,
-                          fontSize: getDynamicTextSize(18),
+                          fontSize: getDynamicTextSize(18, context),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

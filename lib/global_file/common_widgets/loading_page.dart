@@ -21,8 +21,8 @@ class TransparentLoading extends StatelessWidget {
                 width: 180,
                 color: Colors.black26,
                 child: Center(child: Lottie.network("https://assets6.lottiefiles.com/private_files/lf30_lfmwjU.json",
-                    height: getDynamicHeight(160),
-                    width: getDynamicWidth(160)),),
+                    height: getDynamicHeight(160, context),
+                    width: getDynamicWidth(160, context)),),
               ),
             ) : Container()
           ],
